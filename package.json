@@ -1,6 +1,15 @@
 {
   "dependencies": {
     "crypto": "^1.0.1",
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.32",
+    "nodemon": "^2.0.20",
+    "web3": "^1.8.0"
+  },
+  "scripts": {
+    "server": "nodemon server.js"
   }
 }
