@@ -8,9 +8,9 @@ let pdfFiles = fs.readdirSync(dirPath);
 let pdfFilesLength = pdfFiles.length;
 let hashesArray = [];
 
-const {createMerkleTree} = require("./findMerkleTree");
 
 function hashPdfFunction(callback){
+  hashesArray = [];
   fs.readdir(path.resolve(__dirname, "./pdfs"), (err, files) => {
 
   if (err) throw err;
@@ -18,9 +18,9 @@ function hashPdfFunction(callback){
       const fileBuffer = fs.readFileSync(`./pdfs/${file}`, {
         encoding: "utf8",
       });
-
       const hashSum = crypto.createHash("sha256");
       hashSum.update(fileBuffer);
+      
       const hex = hashSum.digest("hex");
       hashesArray.push(hex);
     }
